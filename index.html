@@ -22,7 +22,7 @@
     <header class="container mx-auto mt-[50px]">
         <section>
             <div class="navbar bg-base-100">
-                <div class="navbar-start">
+                <div class="lg:navbar-start">
                     <div class="dropdown">
                         <div tabindex="0" role="button" class="btn  btn-ghost lg:hidden">
                             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24"
@@ -43,7 +43,7 @@
                     </div>
                     <a class="btn btn-ghost text-4xl font-extrabold font-mulish ">ReTro</a>
                 </div>
-                <div class="navbar-end space-x-5 hidden lg:flex">
+                <div class=" lg:navbar-end  space-x-5 hidden lg:flex">
                     <ul class="menu menu-horizontal px-1">
                       
                         <li  ><a><i class="fa-solid fa-house"></i></a></li>
@@ -54,18 +54,19 @@
                     </ul>
                 </div>
                 <div >
-                    <a class="btn">Button</a>
+                    <a class="btn text-white font-bold bg-[#797DFC]">Sign In</a>
                 </div>
             </div>
         </section>
         <section class="mt-7">
-            <div class="hero  h-[350px] bg-[#12132D]" style="background-image: url(images/bgbanner.png);">
+            <div class="hero rounded-xl  lg:h-[350px] bg-[#12132D]" style="background-image: url(images/bgbanner.png);">
                 <div class="hero-content flex-col lg:flex-row">
                   <div class="text-center lg:text-left">
-                    <h1 class="text-6xl w-2/3 font-bold text-[#FFFFFF]">Welcome to the <span class="text-blue-300 ">ReTro</span> Forum</h1>
+                    <h1 class="text-6xl lg:w-2/3 font-bold text-[#FFFFFF]">Welcome to the <span class="text-blue-300 ">ReTro</span> Forum</h1>
                     <p class="py-6 text-[#FFFFFFCC]">Share your favorite opinion and win and wp forum coffee mug!</p>
-                    <label class="input w-1/2 flex justify-end items-center rounded-full p-6">
-                        <input type="text"  placeholder="please text here" />
+                    <label class="input 
+                     lg:w-1/2 flex lg:justify-end md:justify-center items-center rounded-full pr-3">
+                        <input class="" type="text"  placeholder="please text here" />
                        <button class="btn btn-primary rounded-full px-5 ">Search</button>
                       </label>
                     
@@ -84,12 +85,119 @@
               </div>
         </section>
     </header>
-    <main>
-        
-    </main>
-    <footer>
+    <main class=" container mx-auto">
+        <section class="font-mulish mt-7">
+           <div class="text-center mt-8 "> 
+            <h1 class="font-extrabold mb-3 text-4xl text-[#12132D] "> Let’s Discuss</h1>
+            <p class="text-lg font-normal text-[#12132D99] lg:w-1/2 lg:mx-auto" >Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p></div>
+        </section>
+       <section>
+        <div class="flex flex-col lg:flex-row gap-12">
+            <div class="flex gap-8 lg:w-3/5 font-mulish rounded-3xl bg-[#F3F3F5] p-5">
+               <div class="rounded-full btn  bg-slate-400 "><i class="fa-regular fa-flag"></i></div>
+               <div>
+                    <div class="flex gap-6 mb-3">
+                        <h1 class="text-lg text-[#12132DCC] font-medium"># Music</h1>
+                        <h1 class="text-lg text-[#12132DCC] font-medium">Author : <span>Awlad Hossain</span>  </h1>
+                    </div>
+                    <div>
+                        <h1 class="font-bold text-2xl text-[#12132D] mb-2">10 Kids Unaware of Their Halloween Costume</h1>
+                        <p class="font-normal text-lg">It’s one thing to subject yourself to ha Halloween costume mishap because, hey that’s your prerogative</p>
+                    </div>
+                    <div class="divider"></div>
+                    <div class="flex justify-between gap-5">
+                        <span><i class="fa-regular fa-message"></i> 560 </span>
+                        <span><i class="fa-regular fa-eye"></i> 1,568</span>
+                        <span><i class="fa-regular fa-clock"></i> 5 min</span>
+                        <div>
+                            <span><i class="fa-solid fa-envelope" style="color: #63E6BE;"></i></span>
+                        </div>
+                    </div>
 
+               </div>
+            </div>
+            <div class="lg:w-2/5 rounded-3xl bg-slate-400 p-4">
+                <div class="grid grid-cols-2 justify-between items-center text-center">
+                    <h1 class="font-semibold text-xl"> Title </h1>
+                    <h2 class="font-semibold text-xl"><span><i class="fa-solid fa-check-double" style="color: #63E6BE;"></i>Mark as read </span>(4) </h2>
+                </div>
+                <div class="grid text-center grid-cols-2 rounded-3xl bg-gray-300 p-2 mt-5">
+                    <h1 class="text-lg font-semibold">10 Kids Unaware of Their Halloween Costume</h1> 
+                   <div class="font-semibold text-lg"> <span><i class="fa-regular fa-eye"></i> 1,568</span></div>
+                </div>
+            </div>
+        </div>
+       </section>
+       <section class="mt-10">
+        <div class="hero mt-4 bg-[#12132D] rounded-3xl">
+            <div class="hero-content text-center flex-col lg:flex-row  gap-[130px]">
+             
+              <div class="lg:justify-start">
+                <h1 class="text-5xl font-mulish  font-extrabold text-white mb-3">Join Our Forum</h1>
+                <p class="font-medium text-lg font-mulish text-[#FFFFFFCC]">Share your favorite opinion and win and wp forum coffee mug!</p>
+                <p class="font-medium text-lg font-mulish text-[#FFFFFFCC]">Yes, you can run unit tests and view the results directly within the app. </p>
+                <button class="btn bg-[#797DFC] text-xl text-white rounded-2xl mt-5">Registered Now</button>
+
+              </div>
+              <img class="lg:justify-end" src="images/joinforum.png"  />
+            </div>
+          </div>
+                   
+       </section>
+       <section class="mt-8">
+             <div class="text-center">
+                <h1 class="font-extrabold text-3xl font-mulish">Latest Posts </h1>
+                <p class="lg:w-1/2 lg: mx-auto  texr-[#12132D99]">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
+             </div>
+             <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-5">
+                <div class="card w-96 bg-gray-100 shadow-xl">
+                    <figure class="px-10 pt-10">
+                      <img src="" alt="" class="rounded-xl" />
+                    </figure>
+                  
+                        
+
+                   
+                    <div class="card-body  ">
+                        <div class="flex gap-3">
+                            <span><i class="fa-regular fa-calendar-minus"></i></span>
+                            <span class="flex gap-3">29 <p>january</p> 2024</span>
+                        </div>
+                      <h2 class="card-title font-mulish font-extrabold text-lg"> What will a mars habitat force that impact in our daily life!!!</h2>
+                      <p class="font-normal text-lg text-[#12132D99]">Yes, you can run unit tests and view the results directly within the app. </p>
+                      <div class="flex gap-3">
+                        <img class="size-11" src="images/Ellipse 1.svg" alt="">
+                        <div>
+                            <p class="text-xl font-bold">Cameron Williamson</p>
+                            <p>Unknown</p>
+                        </div>
+                    </div>
+
+                     
+                    </div>
+                  </div>
+             </div>
+       </section>
+    </main>
+    <footer class="mt-24">
+        <footer class="footer footer-center  bg-neutral-100 text-primary-content p-24">
+            <aside>
+                <h1 class="text-4xl text-black font-extrabold mb-6">ReTro</h1>
+                <p class="font-bold w-2/3 text-black mb-4">
+                    Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC
+                </p>
+                <div class="space-x-3">
+                    <span class="text-black"><i class="fa-brands fa-twitter"></i></span>
+                    <span class="text-black"><i class="fa-brands fa-facebook"></i></span>
+                    <span class="text-black"><i class="fa-brands fa-instagram"></i></span>
+                    <span class="text-black"><i class="fa-brands fa-github"></i></span>
+                </div>
+                
+                <p class="text-black mt-7">Copyright © 2024 - All right reserved</p>
+            </aside>
+        </footer>
     </footer>
+     <script src="script/retro.js"></script>
 </body>
 
 </html>
