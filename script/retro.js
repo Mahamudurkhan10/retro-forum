@@ -1,25 +1,37 @@
 const kidsCard = async (searchText) => {
-    
+
     const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts?category=${searchText}`)
     const data = await res.json()
     const post = data.posts
     showCard(post)
     lastestPost()
-    
+
 }
 const showCard = post => {
-       
+
     const cardDiv = document.getElementById('show-card')
-    cardDiv.textContent =''
+    cardDiv.textContent = ''
     post.forEach(posts => {
-        
+        let indicator = ''
+        if(posts.isActive){
+          indicator=`  <span id = "indicator" class="indicator-item badge badge-success"></span> `
+        }
+        else if(posts.isActive == false){
+            indicator=`  <span id = "indicator" class="indicator-item badge badge-error"></span> `
+        }
+
+        console.log(posts)
         // console.log( posts)
 
 
         const div = document.createElement('div')
         div.innerHTML = `
     <div class="flex gap-8 font-mulish rounded-3xl bg-[#F3F3F5] p-5">
-    <div class="rounded-full btn  bg-slate-400 "><i class="fa-regular fa-flag"></i></div>
+    <div class="indicator">
+    ${indicator}
+    <div class="grid w-20 h-20  rounded-full bg-base-300 place-items-center"><i class="fa-regular fa-flag"></i></div>
+  </div>
+    
     <div>
          <div class="flex gap-6 mb-3">
              <h1 class="text-lg text-[#12132DCC] font-medium"># ${posts.category} </h1>
@@ -43,45 +55,46 @@ const showCard = post => {
 
     `
         cardDiv.appendChild(div)
-       
+
+        
         
     });
-    loadingSpiner(false)
+   loadingSpiner(false)
 }
 const Search = () => {
-   loadingSpiner(true)
+    loadingSpiner(true)
     const value = document.getElementById('text-here').value;
-   console.log(value)
-   kidsCard(value)
-   if(value ){
+    console.log(value)
     kidsCard(value)
-   }
+    if (value) {
+        kidsCard(value)
+    }
 
-   
+
 }
-const loadingSpiner = (isLoding)=>{
+const loadingSpiner = (isLoding) => {
     const spiner = document.getElementById('loading-spinner')
-    if(isLoding){
+    if (isLoding) {
         spiner.classList.remove('hidden')
     }
-    else{
+    else {
         spiner.classList.add('hidden')
     }
 }
-const mail = async () =>{ 
+const mail = async () => {
     const title = document.getElementById('title-container')
     const div = document.createElement('div')
-    div.innerHTML =`
+    div.innerHTML = `
     <h1 class="text-lg font-semibold"> </h1> 
     <div class="font-semibold text-lg"> <span><i class="fa-regular fa-eye"></i> </span></div>
     `
     title.appendChild(div)
 }
-const lastestPost = async () =>{
+const lastestPost = async () => {
     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts')
     const data = await res.json();
-  
-    data.forEach(data =>{
+
+    data.forEach(data => {
 
         const latestPart = document.getElementById('latest-post')
         const div = document.createElement('div')
@@ -116,7 +129,7 @@ const lastestPost = async () =>{
         latestPart.appendChild(div)
     })
 
-    
+
 
 }
 
