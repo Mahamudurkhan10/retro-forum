@@ -66,12 +66,12 @@
                     <p class="py-6 text-[#FFFFFFCC]">Share your favorite opinion and win and wp forum coffee mug!</p>
                     <label class="input 
                      lg:w-1/2 flex lg:justify-end md:justify-center items-center rounded-full pr-3">
-                        <input class="" type="text"  placeholder="please text here" />
-                       <button class="btn btn-primary rounded-full px-5 ">Search</button>
+                        <input id="text-here" class="" type="text"  placeholder="please text here" />
+                       <button onclick="Search()"  class="btn btn-primary rounded-full px-5 ">Search</button>
                       </label>
                     
                   </div>
-                  <div class="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
+                  <div class="card shrink-0 lg:w-full max-w-sm shadow-2xl bg-base-100">
                     <form class="card-body">
                      <h1 class="flex justify-center gap-12">Registered Users <span>01</span></h1>
                      <h1 class="flex justify-around">Forum <span>01</span></h1>
@@ -86,44 +86,46 @@
         </section>
     </header>
     <main class=" container mx-auto">
+        <section>
+            <div id="loading-spinner" class="text-center my-8 hidden "><span class="loading loading-spinner text-primary loading-lg"></span></div>
+        </section>
         <section class="font-mulish mt-7">
            <div class="text-center mt-8 "> 
             <h1 class="font-extrabold mb-3 text-4xl text-[#12132D] "> Let’s Discuss</h1>
-            <p class="text-lg font-normal text-[#12132D99] lg:w-1/2 lg:mx-auto" >Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p></div>
+            <p class="text-lg font-normal text-[#12132D99] w-1/2 mx-auto lg:w-1/2 lg:mx-auto" >Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p></div>
         </section>
-       <section>
-        <div class="flex flex-col lg:flex-row gap-12">
-            <div class="flex gap-8 lg:w-3/5 font-mulish rounded-3xl bg-[#F3F3F5] p-5">
-               <div class="rounded-full btn  bg-slate-400 "><i class="fa-regular fa-flag"></i></div>
-               <div>
-                    <div class="flex gap-6 mb-3">
-                        <h1 class="text-lg text-[#12132DCC] font-medium"># Music</h1>
-                        <h1 class="text-lg text-[#12132DCC] font-medium">Author : <span>Awlad Hossain</span>  </h1>
-                    </div>
-                    <div>
-                        <h1 class="font-bold text-2xl text-[#12132D] mb-2">10 Kids Unaware of Their Halloween Costume</h1>
-                        <p class="font-normal text-lg">It’s one thing to subject yourself to ha Halloween costume mishap because, hey that’s your prerogative</p>
-                    </div>
-                    <div class="divider"></div>
-                    <div class="flex justify-between gap-5">
-                        <span><i class="fa-regular fa-message"></i> 560 </span>
-                        <span><i class="fa-regular fa-eye"></i> 1,568</span>
-                        <span><i class="fa-regular fa-clock"></i> 5 min</span>
-                        <div>
-                            <span><i class="fa-solid fa-envelope" style="color: #63E6BE;"></i></span>
-                        </div>
-                    </div>
-
-               </div>
+       <section class="flex mt-7 gap-6 ">
+        <div id="show-card" class="flex lg:w-3/5 flex-col lg:flex-row-2 gap-12">
+            <!-- <div class="flex gap-8  font-mulish rounded-3xl bg-[#F3F3F5] p-5">
+                <div class="rounded-full btn  bg-slate-400 "><i class="fa-regular fa-flag"></i></div>
+                <div>
+                     <div class="flex gap-6 mb-3">
+                         <h1 class="text-lg text-[#12132DCC] font-medium"># Music</h1>
+                         <h1 class="text-lg text-[#12132DCC] font-medium">Author : <span>Awlad Hossain</span>  </h1>
+                     </div>
+                     <div>
+                         <h1 class="font-bold text-2xl text-[#12132D] mb-2">10 Kids Unaware of Their Halloween Costume</h1>
+                         <p class="font-normal text-lg">It’s one thing to subject yourself to ha Halloween costume mishap because, hey that’s your prerogative</p>
+                     </div>
+                     <div class="divider"></div>
+                     <div class="flex justify-between gap-5">
+                         <span><i class="fa-regular fa-message"></i> 560 </span>
+                         <span><i class="fa-regular fa-eye"></i> 1,568</span>
+                         <span><i class="fa-regular fa-clock"></i> 5 min</span>
+                         <div>
+                             <span><i class="fa-solid fa-envelope" style="color: #63E6BE;"></i></span>
+                         </div>
+                     </div>
+    
+                </div> -->
             </div>
-            <div class="lg:w-2/5 rounded-3xl bg-slate-400 p-4">
+            <div class="lg:w-2/5 h-[500px] rounded-3xl bg-slate-400 p-4">
                 <div class="grid grid-cols-2 justify-between items-center text-center">
                     <h1 class="font-semibold text-xl"> Title </h1>
                     <h2 class="font-semibold text-xl"><span><i class="fa-solid fa-check-double" style="color: #63E6BE;"></i>Mark as read </span>(4) </h2>
                 </div>
-                <div class="grid text-center grid-cols-2 rounded-3xl bg-gray-300 p-2 mt-5">
-                    <h1 class="text-lg font-semibold">10 Kids Unaware of Their Halloween Costume</h1> 
-                   <div class="font-semibold text-lg"> <span><i class="fa-regular fa-eye"></i> 1,568</span></div>
+                <div id="title-container" class="grid text-center grid-cols-2 rounded-3xl bg-gray-300 p-2 mt-5">
+                   
                 </div>
             </div>
         </div>
@@ -149,33 +151,8 @@
                 <h1 class="font-extrabold text-3xl font-mulish">Latest Posts </h1>
                 <p class="lg:w-1/2 lg: mx-auto  texr-[#12132D99]">Yes, you can run unit tests and view the results directly within the app. The integrated testing features allow for a streamlined .</p>
              </div>
-             <div class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 mt-5">
-                <div class="card w-96 bg-gray-100 shadow-xl">
-                    <figure class="px-10 pt-10">
-                      <img src="" alt="" class="rounded-xl" />
-                    </figure>
-                  
-                        
-
-                   
-                    <div class="card-body  ">
-                        <div class="flex gap-3">
-                            <span><i class="fa-regular fa-calendar-minus"></i></span>
-                            <span class="flex gap-3">29 <p>january</p> 2024</span>
-                        </div>
-                      <h2 class="card-title font-mulish font-extrabold text-lg"> What will a mars habitat force that impact in our daily life!!!</h2>
-                      <p class="font-normal text-lg text-[#12132D99]">Yes, you can run unit tests and view the results directly within the app. </p>
-                      <div class="flex gap-3">
-                        <img class="size-11" src="images/Ellipse 1.svg" alt="">
-                        <div>
-                            <p class="text-xl font-bold">Cameron Williamson</p>
-                            <p>Unknown</p>
-                        </div>
-                    </div>
-
-                     
-                    </div>
-                  </div>
+             <div id="latest-post" class="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-12 mt-5">
+               
              </div>
        </section>
     </main>
