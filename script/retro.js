@@ -30,7 +30,7 @@ const showCard = post => {
     <div class="flex gap-8 font-mulish rounded-3xl bg-[#F3F3F5] p-5">
     <div class="indicator">
     ${indicator}
-    <div class="grid w-20 h-20  rounded-full bg-base-300 place-items-center"><i class="fa-regular fa-flag"></i></div>
+    <div class="grid w-20 h-20  rounded-full bg-base-300 place-items-center"> <img src="${posts.image}" alt=""> </div>
   </div>
     
     <div>
