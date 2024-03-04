@@ -5,7 +5,8 @@ const kidsCard = async (searchText) => {
     const post = data.posts
     showCard(post)
     lastestPost()
-
+   
+   
 }
 const showCard = post => {
 
@@ -47,7 +48,7 @@ const showCard = post => {
              <span><i class="fa-regular fa-eye"></i> ${posts.view_count} </span>
              <span><i class="fa-regular fa-clock"></i> ${posts.posted_time} </span>
              <div>
-                 <span onclick="mail('${posts.id}')" ><i class="fa-solid fa-envelope" style="color: #63E6BE;"></i></span>
+                 <span  onclick="mail( ${posts.id})" ><i class="fa-solid fa-envelope" style="color: #63E6BE;"></i></span>
              </div>
          </div>
 
@@ -72,6 +73,7 @@ const Search = () => {
 
 
 }
+
 const loadingSpiner = (isLoding) => {
     const spiner = document.getElementById('loading-spinner')
     if (isLoding) {
@@ -81,14 +83,31 @@ const loadingSpiner = (isLoding) => {
         spiner.classList.add('hidden')
     }
 }
-const mail = async () => {
-    const title = document.getElementById('title-container')
-    const div = document.createElement('div')
-    div.innerHTML = `
-    <h1 class="text-lg font-semibold"> </h1> 
-    <div class="font-semibold text-lg"> <span><i class="fa-regular fa-eye"></i> </span></div>
-    `
-    title.appendChild(div)
+
+const mail = async ( id ) => {
+    
+   
+  const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`)
+  const data = await res.json()
+  const posts = data.posts
+  posts.forEach(post=>{
+    const viewID = post.id
+    if(viewID ==id){
+         const title = document.getElementById('title-container')
+       const div = document.createElement('div')
+
+     div.innerHTML = `
+     <div class="grid  grid-cols-2 text-center rounded-3xl bg-gray-300 p-2 mt-5">
+     <h1 class="text-lg font-semibold"> ${post.title} </h1> 
+   <div class="font-semibold text-lg"> <span><i class="fa-regular fa-eye"></i> ${post.view_count} </span></div>
+   </div>
+     `
+     title.appendChild(div)
+    }
+  })
+
+    
+   
 }
 const lastestPost = async () => {
     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts')
