@@ -4,7 +4,7 @@ const kidsCard = async (searchText) => {
     const data = await res.json()
     const post = data.posts
     showCard(post)
-    lastestPost()
+    
    
    
 }
@@ -164,5 +164,5 @@ const lastestPost = async () => {
 
 
 }
-
+lastestPost()
 kidsCard("comedy")
