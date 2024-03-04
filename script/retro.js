@@ -21,7 +21,7 @@ const showCard = post => {
             indicator=`  <span id = "indicator" class="indicator-item badge badge-error"></span> `
         }
 
-        console.log(posts)
+        // console.log(posts)
         // console.log( posts)
 
 
@@ -83,16 +83,27 @@ const loadingSpiner = (isLoding) => {
         spiner.classList.add('hidden')
     }
 }
-
-const mail = async ( id ) => {
-    
+let number = 0;
+let sum = 1;
+const mail = async ( id) => {
+   
    
   const res = await fetch(`https://openapi.programming-hero.com/api/retro-forum/posts`)
   const data = await res.json()
   const posts = data.posts
+ 
+  
   posts.forEach(post=>{
+    
+       
     const viewID = post.id
+ 
+    
     if(viewID ==id){
+      const Count = document.getElementById('count')
+      Count.innerText = number +sum;
+      sum++
+        
          const title = document.getElementById('title-container')
        const div = document.createElement('div')
 
@@ -104,11 +115,13 @@ const mail = async ( id ) => {
      `
      title.appendChild(div)
     }
-  })
+    
+   }) 
 
     
    
 }
+
 const lastestPost = async () => {
     const res = await fetch('https://openapi.programming-hero.com/api/retro-forum/latest-posts')
     const data = await res.json();
